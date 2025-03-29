@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="GiftinTech">
+  <meta name="description" content="Hi, my name is Gift Egbonyi, I bring your ideas to life through captivating and visual appealing websites. This is my portfolio.">
+  <title>Gift Egbonyi || Frontend Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
+  <link rel="icon" href="img/gift-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="brand-name"><a href="https://giftegbonyi.vercel.app/" target="_blank" tabindex="0" rel="noopener noreferrer" aria-label="Brand name.">Gifty.</a></li>
+        <li><a href="#about" class="hideOnMobile">About</a></li>
+        <li><a href="#projects" class="hideOnMobile">Projects</a></li>
+        <li><a href="#skills" class="hideOnMobile">Skills</a></li>
+        <li><a href="#contact" class="hideOnMobile">Contact</a></li>
+      </ul>
+
+      <ul class="sidebar">
+        <li>
+          <div class="js-theme-toggle theme-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+              <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/>
+            </svg>
+          </div>
+        </li>
+        <li class="hide-sidebar-svg js-hide-sidebar-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </li> <!-- Toggle in html -->
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://docs.google.com/document/d/1_hdJP_6CwfDrP2BfjCXmZNmOMDC7CcdRH1aNE0EXbsk/edit?usp=sharing" download target="_blank" tabindex="0" rel="noopener" class="sidebar-resume download-resume js-download-resume">
+          Download Resume
+        </a></li>
+      </ul>
+    </nav>
+    <div class="menu-sidebar-svg js-menu-sidebar-svg">
+      <svg class="rotate-svg" viewBox="0 5 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 7.249h-28c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h28c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM18 15.25h-16c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h16c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM8.053 23.25h-6.053c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h6.053c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0z" transform="scale(.9)"></path>
+      </svg>
+    </div>
+  </header>
+
+  <div class="js-theme-toggle theme-toggle hideOnMobile">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+      <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/>
+    </svg>
+  </div>
+
+  <section id="about" class="about">
+    <div class="about-content">
+      <h1>Frontend Developer</h1>
+      <p>
+        Hi, I'm Gift Egbonyi! I'm a frontend developer with a passion for building beautiful, responsive, and user-friendly websites. I specialize in HTML, CSS, and JavaScript, and I'm always eager to learn new technologies to expand my skill set. As a fast learner, I thrive in dynamic environments and enjoy turning creative ideas into functional digital experiences. I’m also exploring backend development to become a well-rounded developer.
+      </p>
+
+      <div class="about-img">
+        <img src="/img/profilepic.jpeg" alt="An AI generated professional picture of me">
+      </div>
+
+      <p>
+        When I’m not behind my laptop, you’ll find me swimming, reading, or binge-watching K-dramas. I love vibing to my favorite songs and dancing (weirdly) in front of my mirror. I also cherish spending time with my loved ones, whether it's deep conversations, just sharing laughs, or hanging out.
+      </p>
+
+      <p>Favourite moments</p>
+
+      <div class="image-container" style="
+        --width: 400px;
+        --height: 400px;
+        --quantity: 5;
+      ">
+        <div class="image-list">
+          <div class="image" style="--position: 1">
+            <img src="/img/signout.jpeg" alt="Signout picture">
+          </div>
+          <div class="image" style="--position: 2">
+            <img src="/img/els-girls.jpeg" alt="ELS Females' FYB picture">
+          </div>
+          <div class="image" style="--position: 3">
+            <img src="/img/football-team.jpeg" alt="ELS female football team picture">
+          </div>
+          <div class="image" style="--position: 4">
+            <img src="/img/last-team-match.jpeg" alt="ELS female football team picture">
+          </div>
+          <div class="image" style="--position: 5">
+            <img src="/img/20250328_193729.png" alt="Signout picture">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="projects-content">
+      <h2>My Projects</h2>
+      <p>Some projects I have worked on</p>
+
+      <div class="projects-flex">
+
+        <div class="projects-card">
+          <div class="projects-card-content">
+            <h3>Personal Portfolio</h3>
+            <p>A front-end developer portfolio.</p>
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub</span>
+              <span>Git</span>
+              <span>Vercel</span>
+            </div>
+            <div class="view-project">
+              <a href="https://giftegbonyi.vercel.app">
+                View Project
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                  <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-card">
+          <div class="projects-card-content">
+            <h3>RPS Game</h3>
+            <p>A rock, paper, and scissors game.</p>
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub</span>
+              <span>Git</span>
+              <span>Netlify</span>
+            </div>
+            <div class="view-project">
+              <a href="https://game-rock-p-scissors.netlify.app">
+                View Project
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                  <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-card">
+          <div class="projects-card-content">
+            <h3>Lead Tracker</h3>
+            <p>A leads tracker website.</p>
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub</span>
+              <span>Git</span>
+              <span>API</span>
+              <span>Vercel</span>
+            </div>
+            <div class="view-project">
+              <a href="https://lead-tracker-magnet.vercel.app">
+                View Project
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                  <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>  
+
+        <div class="projects-card">
+          <div class="projects-card-content">
+            <h3>Counter Website</h3>
+            <p>A counter website.</p>
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub</span>
+              <span>Git</span>
+              <span>Netlify</span>
+            </div>
+            <div class="view-project">
+              <a href="https://client-counter-app.netlify.app">
+                View Project
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                  <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-card">
+          <div class="projects-card-content">
+            <h3>Portfolio website</h3>
+            <p>A portfolio website for a business developer.</p>
+            <div class="project-tools">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>GitHub</span>
+              <span>Git</span>
+              <span>Netlify</span>
+            </div>
+            <div class="view-project">
+              <a href="https://eric-ugbu.netlify.app" target="_blank" tabindex="0" rel="noopener noreferrer" aria-label="TFS design project.">
+                View Project
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                  <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume">
+    <div class="resume-content">
+      <a href="https://docs.google.com/document/d/1_hdJP_6CwfDrP2BfjCXmZNmOMDC7CcdRH1aNE0EXbsk/edit?usp=sharing" download target="_blank" tabindex="0" rel="noopener" class="sidebar-resume body-resume js-download-resume">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <p>I've honed these skills through diverse projects and experiences.</p>
+    <div class="skill-container">
+      <div class="skill-cards">
+        <div class="front-card">
+          <span>Soft Skills</span>
+        </div>
+        <div class="back-card">
+          <ul>
+            <li>Written and spoken Communication</li>
+            <li>Creative Problem Solving</li>
+            <li>Networking and Relationship Building</li>
+            <li>Strategic Planning</li>
+            <li>Team Collaboration</li>
+            <li>Servant Leadership</li>
+            <li>Detail Oriented</li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-cards">
+        <div class="front-card">
+          <span>Technical Skills</span>
+        </div>
+        <div class="back-card">
+          <ul class="technical-back-card">
+            <li>HTLM5</li>
+            <li>CSS</li>
+            <li>JAVASRIPT ES6</li>
+            <li>GIT/GITHUB</li>
+            <li>LOOM</li>
+            <li>FIGMA/MIRO</li>
+            <li>GOOGLE WORKSPACE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="contact-content">
+    <h2>Lets Chat!</h2>
+    <p>
+      Do you have a fun project in mind and want us to collaborate? 
+    </p>
+    <p>
+      This is the place to be. I can help you visualise your ideas—whether you have an idea for a project or just want to chat, feel free to shoot me an email!
+    </p>
+    <button class="contact-content-button" onclick="contactBtn()">
+      Say Hello
+    </button>
+</section>
+
+<section class="connect-with-me">
+  <svg height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+  viewBox="0 0 362.621 362.621" xml:space="preserve">
+    <path d="M288.753,121.491c33.495,0,60.746-27.251,60.746-60.746S322.248,0,288.753,0
+    s-60.745,27.25-60.745,60.746c0,6.307,0.968,12.393,2.76,18.117l-126.099,76.937c-9.707-8.322-22.301-13.366-36.059-13.366
+    c-30.596,0-55.487,24.891-55.487,55.487s24.892,55.487,55.487,55.487c10.889,0,21.047-3.165,29.626-8.606l101.722,58.194
+    c-0.584,3.058-0.902,6.209-0.902,9.435c0,27.676,22.516,50.192,50.191,50.192s50.191-22.516,50.191-50.192
+    s-22.516-50.191-50.191-50.191c-13.637,0-26.014,5.474-35.069,14.331l-95.542-54.658c3.498-7.265,5.46-15.403,5.46-23.991
+    c0-5.99-0.966-11.757-2.73-17.166l125.184-76.379C257.488,114.959,272.368,121.491,288.753,121.491z"/>
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+  </svg>
+
+  <div class="js-connect-with-me-sidebar connect-with-me-sidebar">
+    <div class="social-icons-container">
+      <a href="https://x.com/GifTeaze?s=09/" target="_blank" title="Follow me on X!" tabindex="0" rel="noopener noreferrer" aria-label="Follow on X">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/in/gift-egbonyi/" target="_blank" tabindex="0" rel="noopener noreferrer" aria-label="Follow on LinkedIn">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      </a>
+      <a href="https://github.com/GiftinTech" target="_blank" tabindex="0" rel="noopener noreferrer" aria-label="Check out my GitHub">
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer">
+    <h3>
+      © 2025 
+      <a href="http://giftegbonyi.vercel.app/" target="_blank" rel="noopener noreferrer">
+        Gift Egbonyi
+      </a>. 
+      All rights reserved.
+    </h3>
+    <p>Built with ❤️ and plenty 🍫.</p>
+  </div>
+</footer>
+</body>
+</html>
