@@ -56,6 +56,7 @@ body {
 
 /* Header styles */
 header {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -92,7 +93,6 @@ header li {
 .brand-name a:is(:hover, :focus) {
   background: linear-gradient(to bottom, #011f5f, #af2369, #131313);
   background-size: 400% 400%;
-  color: var(--SECONDARY-FC);
   background-clip: text;
   -webkit-background-clip: text;
   animation: gradientAnimation 3s ease infinite;
@@ -128,6 +128,7 @@ header li {
   top: 10px;
   right: -20px;
   margin-right: -220px;
+  text-align: right;
 }
 
 .menu-sidebar-svg.visible, .hide-sidebar-svg.visible {
@@ -142,10 +143,11 @@ header li {
 /* Sidebar styles */
 .sidebar {
   position: fixed;
-  inset: 0;
-  padding: 50px 0 20px;
+  top: 0;
+  right: 0;
+  padding: 60px 0 20px;
   width: 100%;
-  height: auto;
+  height: 100%;
   z-index: 999;
   background-color: var(--BGCOLOR);
   display: none;
@@ -165,13 +167,12 @@ header li {
 .sidebar li {
   margin-left: auto;
   width: 90%;
-  text-align: right;
 }
 
 .sidebar li a {
   display: flex;
   justify-content: center;
-  padding:  18px 0;
+  padding: 18px 0;
   color: var(--PRIMARY-FC);
   text-decoration: none;
   font-size: 15px;
@@ -203,8 +204,8 @@ header li {
 li .sidebar-resume {
   margin-top: 30px;
   padding: 6px 10px;
-  border: 2px solid var(--PRIMARY-FC);
-  border-radius: 30px;
+  border: 1px solid var(--PRIMARY-FC);
+  border-radius: 20px;
 }
 
 li .sidebar-resume:is(:hover, :focus) {
@@ -214,20 +215,36 @@ li .sidebar-resume:is(:hover, :focus) {
 /* Theme toggle style */
 .theme-toggle {
   position: fixed;
-  bottom: 15px;
+  bottom: 50px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  color: #080808;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    #edededb9 40% 60%,
+    transparent
+  );
+  border: none;
+  border-radius: 30px;
+}
+
+.sidebar .theme-toggle {
+  animation: bounce 2s infinite;
 }
 
 /* About me section */
-
 .about {
   margin-top: 100px;
 }
 
 .about-content h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 42px;
+  font-size: 46px;
   line-height: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  opacity: 0.7;
 }
 
 .about-content p {
@@ -239,7 +256,8 @@ li .sidebar-resume:is(:hover, :focus) {
   border: 5px double rgb(141, 192, 226);
   border-radius: 100%;
   padding: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
+  margin: 30px auto;
 }
 
 .about-img img {
@@ -366,6 +384,10 @@ li .sidebar-resume:is(:hover, :focus) {
   border-radius: 10px;
 }
 
+.project-tools span:is(:hover, :focus) {
+  transform: scale(1.1);
+}
+
 .view-project a {
   display: flex;
   align-items: center;
@@ -376,7 +398,9 @@ li .sidebar-resume:is(:hover, :focus) {
 }
 
 .view-project a:is(:hover, :focus) {
+  transform: scale(1.1);
   font-weight: bold;
+  padding-left: 20px;
 }
 
 .view-project svg {
@@ -430,7 +454,6 @@ li .sidebar-resume:is(:hover, :focus) {
   flex-direction: column;
   gap: 50px;
   margin: 50px auto;
-  perspective: 800px;
  }
  
  .skill-container:focus > .skill-cards {
@@ -494,7 +517,6 @@ li .sidebar-resume:is(:hover, :focus) {
  }
  
  .back-card li:hover {
-   border: 2px solid transparent;
    transition: transform 0.5s ease-out;
    transform: translateY(5px);
  }
@@ -538,38 +560,49 @@ li .sidebar-resume:is(:hover, :focus) {
   text-decoration: none;
  }
 
+ .contact-content-button:is(:hover, :focus) {
+  font-weight: bold;
+ }
+
  /* Connect with me on social media section */
  .connect-with-me {
   fill: #080808;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #ededed;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #ededed 50% 50%,
+    transparent
+  );
   padding: 10px 10px 3px;
   border: none;
   border-radius: 30px;
   box-shadow: var(--BOXSHADOW);
+  animation: bounce 4s infinite;
  }
 
  /* Social media links */
- .connect-with-me-sidebar {
+.connect-with-me-sidebar {
   position: fixed;
-  bottom: 52px;
-  left: 81%;
+  bottom: 90px;
+  left: -5%;
   width: 60px;
   height: 200px;
   z-index: 999;
   display: none;
  }
 
- .connect-with-me-sidebar.visible {
+.connect-with-me-sidebar.visible {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-
- .menu-sidebar-svg.visible, .hide-sidebar-svg.visible {
+ 
+.connect-with-me svg:first-of-type.visible,
+.connect-with-me svg:last-of-type.visible {
   display: block;
 }
 
@@ -579,12 +612,10 @@ li .sidebar-resume:is(:hover, :focus) {
 }
 
 /* Social media icons styles */
-.social-icons-container  {
+.social-icons-container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  transform: translateZ(50px);
-  transition: transform 5s ease forwards;
+  gap: 24px;
 }
 
 .social-icons-container i {
@@ -596,30 +627,540 @@ li .sidebar-resume:is(:hover, :focus) {
   border-radius: 30px;
 }
 
-.social-icons-container a:hover i {
+.social-icons-container svg {
+  position: relative;
+  bottom: 5px;
+  right: -1px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  color: #080808;
+  background-color: #ededed;
+  border: none;
+  border-radius: 30px;
+}
+
+.social-icons-container a:is(:hover, :focus) i,
+.footer-social-icons-container a:is(:hover, :focus) i,
+.social-icons-container svg:is(:hover, :focus) {
   font-weight: bold;
   transform: scale(1.2); 
 }
  
  /* Footer Section */
-.footer {
+ .footer-section {
+  padding: 20px 0 20px;
+ }
+
+.footer-social-icons-container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
   border-top: 2px solid var(--PRIMARY-FC);
   width: 80%;
   margin: 50px auto 0;
-  padding: 20px 0;
-  font-size: 10px;
+  padding: 50px 0 10px;
+}
+
+.footer-social-icons-container i {
+  font-size: 18px;
+  color: var(--PRIMARY-FC);
+  margin-left: -8px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  padding: 0 20px;
 }
 
 .footer a {
   color: var(--PRIMARY-FC);
   text-underline-offset: 2.5px;
+  font-size: 12px;
+}
+
+.footer a:is(:hover, :focus) {
+  font-weight: bold;
 }
 
 .footer p {
   font-size: 12px;
 }
 
-/* insert sm links in footer too */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  } 50% {
+    transform: translateY(-5px);
+    animation-timing-function: ease-in;
+  }
+}
+
+@media (min-width: 360px) {
+  header { gap: 190px; }
+
+  .theme-toggle { bottom: 250px; }
+
+  .hide-sidebar-svg { right: -50px; }
+
+  .sidebar {
+    padding: 60px 0 20px;
+    width: 70%;
+    height: 70%;
+  }
+
+  li .sidebar-resume { margin: 30px auto 0; } 
+
+  .back-card { padding-top: 0px; }
+
+  .contact-content h2 { margin-bottom: 20px; }
+}
+@media (min-width: 375px) {
+  header { gap: 200px; }
+
+  .hide-sidebar-svg { right: -65px; }
+
+  .sidebar { padding: 80px 0 20px; }
+
+  .footer { margin-bottom: 30px; }
+  
+}
+@media (min-width: 390px) {
+  header { 
+    left: -10px;
+    gap: 210px;
+    margin-top: -14px;
+    padding-top: 30px;
+  }
+
+  .hide-sidebar-svg { right: -75px; }
+
+  .back-card {
+    padding-top: 30px;
+  }
+}
+@media (min-width: 412px) {
+  header { 
+    gap: 230px;
+    padding-top: 35px;
+  }  
+
+  .hide-sidebar-svg { 
+    left: 100px;
+    padding-top: 10px;
+  }
+
+  .theme-toggle { 
+    bottom: 300px; 
+    right: 35px;
+  }
+
+  .back-card {
+    padding-top: 18px;
+  }
+
+  .back-card li {
+    font-size: 13px;
+  }
+
+  .technical-back-card {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 414px) {
+  header { 
+    gap: 240px;
+  }    
+
+  .theme-toggle { 
+    bottom: 250px; 
+  }
+}
+
+@media (min-width: 430px) {
+  header { gap: 250px; }  
+
+  .sidebar { height: 60%; }
+  
+  .theme-toggle { bottom: 430px; }  
+}
+
+@media (min-width: 768px) {
+  .menu-sidebar-svg, .hide-sidebar-svg { display: none; }
+
+  .hideOnMobile { display: flex; }
+
+  header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .brand-name {
+    font-size: 24px;
+    margin-right: 150px;
+  }
+
+  header li a {
+    text-decoration: none;
+    color: var(--PRIMARY-FC);
+  }
+
+  header li a:is(:hover, :focus) {
+    font-weight: bold;
+    transform: scale(1.1);
+  }
+
+  h2 { font-size: 35px; }
+  p { font-size: 26px; }
+
+  section { 
+    padding: 0 30px; 
+    margin-top: 150px!important;
+  }
+
+  .about-content h1 {
+    padding-top: 50px;
+    width: 50%;
+    font-size: 78px;
+    line-height: 57px;
+    padding-bottom: 30px;
+  }
+
+  .about-content .about-h1-span {
+    padding-left: 170px;
+  }
+
+  .about-content p { font-size: 24px; }
+
+  .about-img {
+    width: 50%;
+    border: 5px double rgb(141, 192, 226);
+    border-radius: 50%;
+    padding: 8px 9px 0;
+    margin: 50px auto;
+  }
+
+  .about-content p:nth-of-type(3) {
+    margin: 50px auto;
+    font-size: 30px;
+  }
+
+  .projects-flex {
+    margin: 50px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 30px;
+  }
+
+  .projects-card { 
+    width: 100%;
+    padding: 25px; 
+  }
+
+  .resume-content a {
+    font-size: 24px;
+  }
+
+  .back-card {
+    padding-top: 50px;
+  }
+
+  .back-card li {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .contact-content p:nth-of-type(1) {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 40px auto;
+  }
+
+  .contact-content button {
+    margin: 60px auto;
+    font-size: 20px;
+  }
+
+  .connect-with-me {
+    background-color: #ededed;
+    right: 30px;
+    bottom: 50px;
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+  }
+
+  .connect-with-me-sidebar {
+    bottom: 110px;
+    left: -5%;
+  }
+
+  .social-icons-container i {
+    font-size: 26px;
+  }
+
+  .social-icons-container svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footer-social-icons-container i {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    flex-direction: row;
+    gap: 130px;
+    margin-top: 20px;
+  }
+
+  .footer h3,
+  .footer p,
+  .footer a {
+    font-size: 16px;
+  }
+}
+@media (min-width: 800px) {
+  header ul { gap: 30px; }
+}
+@media (min-width: 834px) { header ul { gap: 35px; } }
+@media (min-width: 884px) { 
+  .brand-name { margin-right: 200px; } 
+}
+@media (min-width: 1114px) { 
+  header ul { gap: 40px; } 
+  .brand-name { margin-right: 410px; }
+}
+@media (min-width: 1024px) {
+  header ul { gap: 38px; } 
+  header li { font-size: 18px; } 
+  .brand-name { 
+    margin-right: 280px; 
+    font-size: 30px;
+  }
+
+  section {
+    padding: 0 50px;
+  }
+
+  h2 { font-size: 45px; }
+  p { font-size: 36px; }
+
+  .about-content h1 {
+    padding-top: 100px;
+    font-size: 98px;
+    line-height: 80px;
+    margin-bottom: 70px;
+  }
+
+  .about-content p {
+    columns: 2;
+    column-gap: 80px;
+  }
+
+  .about-img {
+    width: 25%;
+    margin: 100px auto;
+  }
+
+  .about-content p:nth-of-type(3) {
+    margin: 70px auto;
+    font-size: 38px;
+  }
+
+  .projects-flex {
+    margin: 80px auto;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
+  }
+
+  .projects-card { 
+    width: 420px;
+    padding: 25px; 
+  }
+
+  .projects-card:is(:hover, :focus) {
+    transform: scale(1.1);
+    transition: transform 1s ease;
+  }
+
+  .resume-content {
+    margin-top: 180px;
+  }
+
+  .resume-content a {
+    font-size: 28px;
+  }  
+
+  .skills p {
+    font-size: 36px!important;
+  }
+
+  .skill-container {
+    flex-direction: row;
+    gap: 50px;
+  }
+  
+  .skill-cards {
+    width: 100%;
+    height: 400px;
+  }
+
+  .front-card {
+    padding-top: 50px;
+    font-size: 26px;
+  }
+
+  .back-card {
+    padding-top: 50px;
+    height: 100%;
+  }
+
+  .technical-back-card {
+    padding-top: 50px!important;
+  }
+
+  .contact-content h2 {
+    margin-top: 200px;
+  }
+
+  .contact-content p {
+    font-size: 24px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .contact-content p:nth-of-type(1) {
+    font-size: 38px;
+    margin: 60px auto;
+  }
+
+  .contact-content button {
+    margin: 80px auto;
+    font-size: 28px;
+  }
+
+  .connect-with-me {
+    right: 35px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .connect-with-me-sidebar {
+    left: -10%;
+  }
+
+  .footer-social-icons-container {
+    width: 85%;
+  }
+
+  .footer {
+    flex-direction: row;
+    gap: 400px;
+    margin-top: 20px;
+  }
+
+  .footer h3,
+  .footer p,
+  .footer a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  header { margin-top: -5px; }
+  header ul { gap: 40px; } 
+  header li { font-size: 20px; } 
+  .brand-name { 
+    margin-right: 480px; 
+    font-size: 34px;
+  }
+
+  .projects-card { 
+    width: 550px;
+  }
+
+  .footer {
+    gap: 600px;
+  }
+}
+
+@media (min-width: 1440px) {
+  header ul { gap: 45px; } 
+  header li { font-size: 26px; } 
+  .brand-name { 
+    margin-right: 520px; 
+  }
+
+  section { padding: 0 80px;}
+
+  .projects-flex {
+    padding: 0 30px;
+  }
+
+  .projects-card { 
+    width: 350px;
+  }
+
+  .footer {
+    gap: 700px;
+  }
+}
+
+@media (min-width: 2560px) {
+  section, header { padding: 0 200px; }
+
+  h2 { font-size: 75px; }
+  p { font-size: 56px; }
+
+  header ul { gap: 150px; } 
+  header li { 
+    font-size: 40px; 
+    padding: 50px 0;
+  } 
+  .brand-name { 
+    font-size: 48px;
+    margin-right: 880px; 
+  }
+
+  .about-content h1 {
+    font-size: 180px;
+    line-height: 130px;
+    padding-top: 400px;
+  }
+
+  .about-h1-span {
+    margin-left: 210px;
+  }
+
+  .projects-flex {
+    padding: 0 30px;
+    gap: 80px;
+    justify-content: flex-start;
+  }
+
+  .projects-card { 
+    width: 600px;
+    height: 400px;
+  } 
+  /* I stopped here */
+
+  .footer {
+    gap: 700px;
+  }
+}

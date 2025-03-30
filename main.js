@@ -2,7 +2,7 @@ const sidebar = document.querySelector('.sidebar');
 const brandName = document.querySelector('.brand-name');
 const menubarSvg = document.querySelector('.js-menu-sidebar-svg');
 const hideSidebarSvg = document.querySelector('.js-hide-sidebar-svg');
-const themeToggle = document.querySelector('.js-theme-toggle');
+const themeToggle = document.querySelectorAll('.js-theme-toggle');
 const body = document.body;
 const anchorElements = document.querySelectorAll('a');
 const flipCards = document.querySelectorAll('.skill-container > .skill-cards');
@@ -22,10 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateThemeIcon(theme) {
     if (theme === 'dark') {
       themeToggle.innerHTML = darkModeIcon();
-      themeToggle.style.fill = 'var(--SVGFILL)';
     } else {
       themeToggle.innerHTML = lightModeIcon();
-      themeToggle.style.fill = 'var(--SVGFILL)';
     }
   }
 
@@ -51,11 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme();
 
   // Toggle dark and Light mode functionality
-  themeToggle.addEventListener('click', () => {
-    const isDark = body.classList.toggle('dark-mode'); 
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateThemeIcon(isDark ? 'dark' : 'light'); 
-  });
+  themeToggle.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const isDark = body.classList.toggle('dark-mode'); 
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeIcon(isDark ? 'dark' : 'light'); 
+    });
+  })
 
   // Toggle sidebar functionality
   function toggleSidebar() {
