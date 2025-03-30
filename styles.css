@@ -898,12 +898,12 @@ li .sidebar-resume:is(:hover, :focus) {
     margin-top: 20px;
   }
 
-  .connect-with-me-sidebar {
-    bottom: 60px!important;
-  }
-
   .social-icons-container {
     gap: 10px;
+  }
+
+  .connect-with-me-sidebar {
+    bottom: 30px!important;
   }
 }
 
@@ -1008,6 +1008,15 @@ li .sidebar-resume:is(:hover, :focus) {
   .connect-with-me-sidebar {
     bottom: 110px;
     left: -5%;
+  }
+
+    
+  .social-icons-container {
+    gap: 20px;
+  }
+
+  .connect-with-me-sidebar {
+    bottom: 100px!important;
   }
 
   .social-icons-container i {
