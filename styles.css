@@ -64,7 +64,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 150px;
+  gap: 80px;
   padding: 15px 20px;
   background-color: var(--BGCOLOR);
   margin-top: -5px;
@@ -78,6 +78,7 @@ header li {
 }
 
 .brand-name {
+  margin-right: 100px;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 18px;
   text-transform: uppercase;
@@ -247,6 +248,10 @@ li .sidebar-resume:is(:hover, :focus) {
   opacity: 0.7;
 }
 
+.about-content .about-h1-span {
+  padding-left: 100px;
+}
+
 .about-content p {
   font-size: 18px;
   margin: 20px auto;
@@ -336,13 +341,14 @@ li .sidebar-resume:is(:hover, :focus) {
 .projects-flex {
   margin: 30px auto;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
 .projects-card {
+  width: 100%;
   padding: 20px 10px;
   background-color: var(--BGCOLOR);
 }
@@ -627,7 +633,7 @@ li .sidebar-resume:is(:hover, :focus) {
   border-radius: 30px;
 }
 
-.social-icons-container svg {
+.social-icons-container div {
   position: relative;
   bottom: 5px;
   right: -1px;
@@ -642,7 +648,7 @@ li .sidebar-resume:is(:hover, :focus) {
 
 .social-icons-container a:is(:hover, :focus) i,
 .footer-social-icons-container a:is(:hover, :focus) i,
-.social-icons-container svg:is(:hover, :focus) {
+.social-icons-container div:is(:hover, :focus) {
   font-weight: bold;
   transform: scale(1.2); 
 }
@@ -704,7 +710,7 @@ li .sidebar-resume:is(:hover, :focus) {
 }
 
 @media (min-width: 360px) {
-  header { gap: 190px; }
+  header { gap: 90px; }
 
   .theme-toggle { bottom: 250px; }
 
@@ -718,12 +724,22 @@ li .sidebar-resume:is(:hover, :focus) {
 
   li .sidebar-resume { margin: 30px auto 0; } 
 
+  .about-content h1 {
+    font-size: 38px;
+    line-height: 30px;
+    padding-top: 20px;
+  }
+
+  .about-img {
+    width: 70%;
+  }
+
   .back-card { padding-top: 0px; }
 
   .contact-content h2 { margin-bottom: 20px; }
 }
 @media (min-width: 375px) {
-  header { gap: 200px; }
+  header { gap: 110px; }
 
   .hide-sidebar-svg { right: -65px; }
 
@@ -735,7 +751,7 @@ li .sidebar-resume:is(:hover, :focus) {
 @media (min-width: 390px) {
   header { 
     left: -10px;
-    gap: 210px;
+    gap: 115px;
     margin-top: -14px;
     padding-top: 30px;
   }
@@ -748,9 +764,13 @@ li .sidebar-resume:is(:hover, :focus) {
 }
 @media (min-width: 412px) {
   header { 
-    gap: 230px;
+    gap: 130px;
     padding-top: 35px;
   }  
+
+  .about-content h1 {
+    padding-top: 50px;
+  }
 
   .hide-sidebar-svg { 
     left: 100px;
@@ -776,7 +796,7 @@ li .sidebar-resume:is(:hover, :focus) {
 }
 @media (min-width: 414px) {
   header { 
-    gap: 240px;
+    gap: 140px;
   }    
 
   .theme-toggle { 
@@ -784,29 +804,40 @@ li .sidebar-resume:is(:hover, :focus) {
   }
 }
 
+@media (min-width: 428px) {
+  header { gap: 150px; }
+}
+
 @media (min-width: 430px) {
-  header { gap: 250px; }  
+  header { gap: 150px; }  
 
   .sidebar { height: 60%; }
   
   .theme-toggle { bottom: 430px; }  
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
+  header { gap: 200px; }  
+}
+
+@media (min-width: 500px) {
   .menu-sidebar-svg, .hide-sidebar-svg { display: none; }
 
   .hideOnMobile { display: flex; }
+
+  header { gap: 210px; } 
 
   header ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-  }
-  
+    gap: 10px;
+    margin-right: -50px;
+  } 
+
   .brand-name {
     font-size: 24px;
-    margin-right: 150px;
+    margin-right: 110px;
   }
 
   header li a {
@@ -818,6 +849,43 @@ li .sidebar-resume:is(:hover, :focus) {
     font-weight: bold;
     transform: scale(1.1);
   }
+
+  .about-content h1 {
+    width: 50%;
+    font-size: 54px;
+    line-height: 40px;
+  }
+
+  .about-content .about-h1-span {
+    padding-left: 100px;
+  }
+
+  .projects-flex {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .projects-card { 
+    padding: 25px; 
+  }
+
+  .back-card {
+    padding-top: 70px;
+  }
+
+  .technical-back-card {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) { 
+  header ul {
+    margin-right: -10px;
+  } 
+
+  .brand-name { margin-right: 190px; }
 
   h2 { font-size: 35px; }
   p { font-size: 26px; }
@@ -836,7 +904,8 @@ li .sidebar-resume:is(:hover, :focus) {
   }
 
   .about-content .about-h1-span {
-    padding-left: 170px;
+    padding-left: 175px;
+    line-height: 62px;
   }
 
   .about-content p { font-size: 24px; }
@@ -868,6 +937,14 @@ li .sidebar-resume:is(:hover, :focus) {
     padding: 25px; 
   }
 
+  .skill-cards {
+    width: 100%;
+  }
+
+  .technical-back-card {
+    margin-top: 50px;
+  }
+
   .resume-content a {
     font-size: 24px;
   }
@@ -895,7 +972,7 @@ li .sidebar-resume:is(:hover, :focus) {
   .connect-with-me {
     background-color: #ededed;
     right: 30px;
-    bottom: 50px;
+    bottom: 10px;
     width: 44px;
     height: 44px;
     padding: 12px;
@@ -910,7 +987,7 @@ li .sidebar-resume:is(:hover, :focus) {
     font-size: 26px;
   }
 
-  .social-icons-container svg {
+  .social-icons-container div {
     width: 44px;
     height: 44px;
   }
@@ -933,15 +1010,14 @@ li .sidebar-resume:is(:hover, :focus) {
   }
 }
 @media (min-width: 800px) {
-  header ul { gap: 30px; }
+  header ul { gap: 25px; }
 }
-@media (min-width: 834px) { header ul { gap: 35px; } }
+@media (min-width: 834px) { header ul { gap: 30px; } }
 @media (min-width: 884px) { 
-  .brand-name { margin-right: 200px; } 
+  .brand-name { margin-right: 230px; } 
 }
 @media (min-width: 1114px) { 
-  header ul { gap: 40px; } 
-  .brand-name { margin-right: 410px; }
+  header ul { gap: 50px; } 
 }
 @media (min-width: 1024px) {
   header ul { gap: 38px; } 
@@ -972,7 +1048,7 @@ li .sidebar-resume:is(:hover, :focus) {
 
   .about-img {
     width: 25%;
-    margin: 100px auto;
+    margin: 100px 0;
   }
 
   .about-content p:nth-of-type(3) {
@@ -1027,12 +1103,12 @@ li .sidebar-resume:is(:hover, :focus) {
   }
 
   .back-card {
-    padding-top: 50px;
+    padding-top: 10px;
     height: 100%;
   }
 
   .technical-back-card {
-    padding-top: 50px!important;
+    margin-top: 60px;
   }
 
   .contact-content h2 {
@@ -1087,8 +1163,12 @@ li .sidebar-resume:is(:hover, :focus) {
   header ul { gap: 40px; } 
   header li { font-size: 20px; } 
   .brand-name { 
-    margin-right: 480px; 
+    margin-right: 490px; 
     font-size: 34px;
+  }
+
+  .about-img {
+    margin: 50px auto;
   }
 
   .projects-card { 
@@ -1101,13 +1181,17 @@ li .sidebar-resume:is(:hover, :focus) {
 }
 
 @media (min-width: 1440px) {
-  header ul { gap: 45px; } 
+  header ul { gap: 60px; } 
   header li { font-size: 26px; } 
   .brand-name { 
-    margin-right: 520px; 
+    margin-right: 550px; 
   }
 
   section { padding: 0 80px;}
+
+  .about-content .about-h1-span {
+    padding-left: 220px;
+  }
 
   .projects-flex {
     padding: 0 30px;
@@ -1115,6 +1199,14 @@ li .sidebar-resume:is(:hover, :focus) {
 
   .projects-card { 
     width: 350px;
+  }
+
+  .back-card {
+    padding-top: 40px;
+  }
+
+  .technical-back-card {
+    margin-top: 70px;
   }
 
   .footer {
@@ -1144,23 +1236,72 @@ li .sidebar-resume:is(:hover, :focus) {
     padding-top: 400px;
   }
 
-  .about-h1-span {
-    margin-left: 210px;
+  .about-content .about-h1-span {
+    padding-left: 280px;
   }
 
   .projects-flex {
     padding: 0 30px;
     gap: 80px;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .projects-card { 
     width: 600px;
     height: 400px;
   } 
-  /* I stopped here */
+
+  .resume-content {
+    margin: 280px auto;
+  }
+
+  .resume-content a {
+    font-size: 38px;
+  }
+
+  .front-card {
+    font-size: 36px;
+  }
+
+  .back-card li {
+    font-size: 24px;
+  }
+
+  .back-card {
+    padding-top: 100px;
+  }
+  
+  .contact-content p:nth-of-type(2) {
+    font-size: 38px;
+    line-height: 40px;
+  }
+
+  .contact-content-button {
+    margin: 160px auto!important;
+    font-size: 40px!important;
+  }
+
+  .connect-with-me {
+    bottom: 50px;
+  }
+
+  .footer-social-icons-container {
+    gap: 100px;
+    padding: 100px 0 60px;
+  }
+
+  .footer-social-icons-container i {
+    font-size: 48px;
+  }
 
   .footer {
-    gap: 700px;
+    gap: 1000px;
+  }
+
+  .footer h3,
+  .footer p,
+  .footer a {
+    font-size: 36px;
   }
 }
